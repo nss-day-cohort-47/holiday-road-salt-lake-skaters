@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Road</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div>Logo</div>
+        <h1>Salt Lake Skaters</h1>
+    </header>
+    <main>
+        <div class="section-left">
+        <section class="dropdown-container">
+            <div id="national-parks"></div>
+            <div id="eateries"></div>
+            <div id="bizarreries"></div>
+        </section>
+        <section class="preview-container">
+            <div class="weather-forecast">
+                <h2>Weather Forecast:</h2>
+                <ul>
+                    <li>Temperature</li>
+                    <li>Rain</li>
+                </ul>
+            </div>
+            <div class="itinerary-preview">
+                <h2>Itinerary Preview</h2>
+                <ul>
+                    <!-- event listener -->
+                    <li>Selected National Park</li>
+                    <button id="park__details">Details</button>
+                    <li>Selected Eatery</li>
+                    <button id="eatery__details">Details</button>
+                    <li>Selected Bizarreries</li>
+                    <button id="biz__details">Details</button>
+                </ul>
+                <div>
+                    <h3>Preview Box</h3>
+                    <ul>
+                        <li>Address</li>
+                        <li>Amenities</li>
+                    </ul>
+                    <!-- event listener -->
+                    <input id="itinerary-name" type="text" placeholder="Name your adventure">
+                    <button id="itinerary-save">Save</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="section-right">
+        <aside class="saved-itinerary">
+            <h2>Saved Itineraries</h2>
+            <h3>Itinerary Name</h3>
+            <ul>
+                <li>National Park</li>
+                <li>Eatery</li>
+                <li>Bizarrery</li>
+            </ul> 
+            <hr>
+        </aside>
+    </div>
+
+    </main>
+
+
+    <footer></footer>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
