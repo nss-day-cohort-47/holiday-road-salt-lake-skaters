@@ -1,0 +1,60 @@
+header {
+    display: flex;
+    /* border: 5px solid black; */
+}
+
+main {
+    display: flex;
+    /* border: 5px solid red; */
+    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    /* border: 5px solid black; */
+}
+
+.section-center {
+    display: flex;
+    /* border: 5px solid green; */
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-grow: 3;
+
+}
+
+.section-weather {
+    display: flex;
+    /* border: 5px solid orange; */
+    /* justify-content: flex-end; */
+    flex-direction: column;
+    flex-grow: 1;
+
+}
+
+.section-right {
+    display: flex;
+    /* border: 5px solid purple; */
+    flex-grow: 1;
+}
+
+.dropdown-container {
+    display: flex;
+    /* border: 5px solid aqua; */
+}
+
+.preview-container {
+    display: flex;
+    /* border: 5px solid yellow; */
+}
+
+.itinerary-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-forecast {
+    display: flex;
+    flex-direction: column;
+    /* border: 5px solid black */
+}

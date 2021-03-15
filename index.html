@@ -13,20 +13,38 @@
         <h1>Salt Lake Skaters</h1>
     </header>
     <main>
-        <div class="section-left">
-        <section class="dropdown-container">
-            <div id="national-parks"></div>
-            <div id="eateries"></div>
-            <div id="bizarreries"></div>
-        </section>
-        <section class="preview-container">
-            <div class="weather-forecast">
+            <div class="section-weather">
                 <h2>Weather Forecast:</h2>
                 <ul>
                     <li>Temperature</li>
                     <li>Rain</li>
                 </ul>
             </div>
+        
+        <div class="section-center">
+        <section class="dropdown-container">
+            <div id="national-park-select">
+                <select>
+                    <option value="0">Select a Park</option>
+                    <option>Yosemite</option>
+                    <option>Niagra Falls</option>
+                </select>
+            </div>
+            <div id="eatery-select">
+                <select name="eateries" id="eateries">
+                    <option value="0">Select an Eatery</option>
+                    <option>Bob's Burgers</option>
+                </select>
+            </div>
+            <div id="bizarre-select">
+                <select name="bizarre" id="bizarre">
+                    <option value="0">Select an Attraction</option>
+                    <option>Bearded Lady</option>
+                </select>
+            </div>
+        </section>
+        <section class="preview-container">
+            
             <div class="itinerary-preview">
                 <h2>Itinerary Preview</h2>
                 <ul>
@@ -38,7 +56,7 @@
                     <li>Selected Bizarreries</li>
                     <button id="biz__details">Details</button>
                 </ul>
-                <div>
+                <div class="itinerary-preview__box">
                     <h3>Preview Box</h3>
                     <ul>
                         <li>Address</li>
@@ -67,7 +85,7 @@
     </main>
 
 
-    <footer></footer>
+    <footer>&copy; NSS 2021</footer>
     <script type="module" src="scripts/main.js"></script>
 </body>
 </html>
