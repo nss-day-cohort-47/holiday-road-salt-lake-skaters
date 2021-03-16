@@ -9,7 +9,7 @@
 // }
 
 // export const getWeather = () => {
-//     return fetch("api.openweathermap.org/data/2.5/forecast?q=${cityname}&appid=${settings.weatherKey}")
+//     return fetch("api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=settings.weatherKey")
 //     .then(response => response.json())
 //     .then(parsedResponse => {
 //         weatherCollection = parsedResponse.daily
