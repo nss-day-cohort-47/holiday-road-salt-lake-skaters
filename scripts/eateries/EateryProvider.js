@@ -8,6 +8,7 @@ const getEateries = () => {
     .then(
         parsedResponse => {
         allEateries = parsedResponse
+        return parsedResponse
 
     })
 
@@ -38,4 +39,38 @@ export const populateEateries = () => {
     )
 }
 
+export const eateryListener = () => { getEateries()
+    .then( () => {
+        const listenerArray = useEateries()
+        console.log(listenerArray)
+
+        const eatery = (eatObj) => {
+            return eatObj.id
+        }
+
+        let eateryValue = "";
+
+        for (const oneObject of listenerArray) {
+            eateryValue += eatery(oneObject)
+            console.log(eateryValue)
+        }
+
+
+    }
+)
+    
+}
+
+
 const dropdown = document.querySelector(".dropdown-container")
+
+
+// document.addEventListener("click", event => {
+//     switch(event.target.id){
+//         case `${listenerArray.id}`:
+//             console.log(`You clicked ${listenerArray.id}`)
+//             break;
+//         default:
+//             console.log("There is nothing selected, only Zuul")
+//     }
+// })
