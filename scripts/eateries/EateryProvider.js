@@ -13,7 +13,7 @@ const getEateries = () => {
 
 }
 
-const render = (allTheEateries) => {
+const renderEats = (allTheEateries) => {
     
     const eateryTarget = document.querySelector("#eatery-select")
     
@@ -22,7 +22,7 @@ const render = (allTheEateries) => {
     }).join("")
     
     eateryTarget.innerHTML = `
-            <select name="eateries" id="eateries">
+            <select name="eateries" id="eateries__dropdown">
                 <option value="0">Select an Eatery</option>
                 ${options}
             </select>`
@@ -32,10 +32,6 @@ export const populateEateries = () => {
     getEateries()
     .then( () => {
         const goodEats = useEateries()
-        render(goodEats)
-    }
-
-    )
+        renderEats(goodEats)
+    })
 }
-
-const dropdown = document.querySelector(".dropdown-container")
