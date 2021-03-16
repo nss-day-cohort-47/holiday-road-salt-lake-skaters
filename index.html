@@ -24,22 +24,22 @@
         <div class="section-center">
         <section class="dropdown-container">
             <div id="national-park-select">
-                <select>
+                <select id="national-park__dropdown">
                     <option value="0">Select a Park</option>
-                    <option>Yosemite</option>
-                    <option>Niagra Falls</option>
+                    <option value="1">Yosemite</option>
+                    <option value="2">Niagra Falls</option>
                 </select>
             </div>
             <div id="eatery-select">
-                <select name="eateries" id="eateries">
+                <select name="eateries" id="eateries__dropdown">
                     <option value="0">Select an Eatery</option>
-                    <option>Bob's Burgers</option>
+                    <option id="bob" value="bob">Bob's Burgers</option>
                 </select>
             </div>
             <div id="bizarre-select">
-                <select name="bizarre" id="bizarre">
+                <select name="bizarre" id="bizarre__dropdown">
                     <option value="0">Select an Attraction</option>
-                    <option>Bearded Lady</option>
+                    <option value="beard">Bearded Lady</option>
                 </select>
             </div>
         </section>
@@ -64,7 +64,7 @@
                     </ul>
                     <!-- event listener -->
                     <input id="itinerary-name" type="text" placeholder="Name your adventure">
-                    <button id="itinerary-save">Save</button>
+                    <button id="itinerary__save">Save</button>
                 </div>
             </div>
         </section>
