@@ -1,4 +1,4 @@
-import { settings } from "../Setting.js"
+import { settings } from "../Settings.js"
 import { parkComponent } from "./ParksComponent.js"
 
 
