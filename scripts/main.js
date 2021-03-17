@@ -1,6 +1,6 @@
-// import {showWeatherList, } from "./weather/WeatherProvider.js"
+import {showWeatherList, } from "./weather/WeatherProvider.js"
 
-// showWeatherList();
+showWeatherList();
 
 import { populateEateries } from "./eateries/EateryProvider.js";
 import { clickListener, changeListener } from "./EventListeners.js"

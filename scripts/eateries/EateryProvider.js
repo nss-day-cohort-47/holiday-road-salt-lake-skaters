@@ -8,6 +8,7 @@ const getEateries = () => {
     .then(
         parsedResponse => {
         allEateries = parsedResponse
+        
 
     })
 

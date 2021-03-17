@@ -1,4 +1,4 @@
-import { settings } from "../Setting.js"
+import { settings } from "../Settings.js"
 
 
 let allParks = []
@@ -11,11 +11,12 @@ const getParks = () => {
     .then(
         parsedResponse => {
         allParks = parsedResponse.data
-
+        console.log(allParks);
+        return allParks.data;
     })
 
 }
-console.log(useParks);
+
 
 const render = (parkList) => {
     
