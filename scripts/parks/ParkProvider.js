@@ -1,4 +1,5 @@
 import { settings } from "../Setting.js"
+import { parkComponent } from "./ParksComponent.js"
 
 
 let allParks = []
@@ -41,4 +42,31 @@ export const populateParks = () => {
     }
 
     )
+}
+
+export const parkListener = () => {
+
+    document.addEventListener("change", event => {
+        if(event.target.id === "national-park__dropdown"){
+            const parkValue = event.target.value
+            console.log(parkValue)
+            showPark(parkValue)
+        }
+    })
+}
+
+const showPark = (park) => {
+    getParks()
+    .then(response => {
+        return response;
+    })
+    .then( () => {
+        const parkArray = useParks().filter(onePark => {
+            if(onePark.id === park){
+                return onePark
+            }
+        })
+        const parkElement = document.querySelector(".itinerary-preview__park");
+        parkElement.innerHTML = parkComponent(parkArray[0])
+    })
 }
