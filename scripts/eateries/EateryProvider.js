@@ -1,3 +1,4 @@
+import { eatComponent } from "./EateryComponent.js"
 let allEateries = []
 
 const useEateries = () => [...allEateries]
@@ -8,8 +9,6 @@ const getEateries = () => {
     .then(
         parsedResponse => {
         allEateries = parsedResponse
-        return parsedResponse
-
     })
 
 }
@@ -39,31 +38,20 @@ export const populateEateries = () => {
     )
 }
 
-// UNDER CONSTRUCTION=================================================
-const eatComponent = (object) => {
-    return `
-    <h3>Preview Box</h3>
-    <ul>
-        <li>Name:${object.businessName}</li>
-        <li>City:${object.city}</li>
-    </ul>
-    <input id="itinerary-name" type="text" placeholder="Name your adventure">
-    <button id="itinerary__save">Save</button>`
-}
 export const eateryListener = () => {
 
         document.addEventListener("change", event => {
         if(event.target.id === "eateries"){
-            const eateryValue = event.target.value
+            const eateryValue = parseInt(event.target.value)
+            console.log(eateryValue)
             showEatery(eateryValue)
         }
         })
-
+}
         const showEatery = (eat) => { 
             getEateries()
             .then( response => {
                 return response;
-                
             })
             .then( () => {
                 const eateryArray = useEateries().filter(oneEatery => {
@@ -71,24 +59,7 @@ export const eateryListener = () => {
                         return oneEatery
                     }
                 })
-                    const eatElement = document.querySelector(".itinerary-preview__box");
-                    eatElement.innerHTML = eatComponent(eateryArray)
+                const eatElement = document.querySelector(".itinerary-preview__eat");
+                eatElement.innerHTML = eatComponent(eateryArray[0])
             })
-
-            
         }
-
-}
-
-
-
-
-        // const eateryArray = useEateries().filter(singleObject => {
-        //     if(singleObject.id === eateryValue){
-        //         return singleObject
-        //     }
-        // })
-        // console.log(eateryArray)
-        // if (eateryArray.id === eateryValue){
-        //     console.log("it fucking worked!")
-        // }
