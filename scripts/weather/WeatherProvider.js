@@ -1,18 +1,22 @@
+// imported API key 
 import { settings } from "../Settings.js"
 
 
-
+// array that holds copy of useWeatherCollection
 let weatherCollection = [];
 
- export const useWeatherCollection =() => {
+
+// function that returns copy of useWeatherCollection array
+  const useWeatherCollection =() => {
     return [...weatherCollection];
 }
 
+// created a function that fetchs forecast from API then return parsed array
 export const getWeather = () => {
     return fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=40.41029575&lon=-76.4337548&appid=${settings.weatherKey}`)
     .then(response => response.json())
     .then(parsedResponse => {
-        weatherCollection = parsedResponse.daily
+        weatherCollection = parsedResponse
         return weatherCollection;
     })
 }
@@ -31,15 +35,22 @@ const ForecastCard = (weatherObj) => {
     `
 }
 
-const weatherList = (dailyForecast) => {
+const weatherList = () => {
     let weatherHTML = "";
-    for (const weatherObj of dailyForecast){
-        weatherHTML += ForecastCard(dailyForecast)
-
+    getWeather().then ( () => {
+        const weatherArray = useWeatherCollection();
+        return weatherArray;
+    })
+    .then(()=> {
+        for (const day of weatherArray) {
+            weatherHTML += ForecastCard(day)
+        }
     }
-    console.log(weatherHTML)
-    return weatherHTML;
+    )
 }
+    // return weatherHTML;
+  
+
 
  export const showWeatherList = () => {
     const weatherElement = document.querySelector(".section-weather");

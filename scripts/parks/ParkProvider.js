@@ -11,7 +11,7 @@ const getParks = () => {
     .then(
         parsedResponse => {
         allParks = parsedResponse.data
-        console.log(allParks);
+        
         return allParks.data;
     })
 
