@@ -4,7 +4,7 @@
 
 import { populateEateries, eateryListener } from "./eateries/EateryProvider.js";
 import { clickListener, changeListener } from "./EventListeners.js";
-import { populateAttractions } from "./attractions/AttractionProvider.js";
+import { populateAttractions, attractionListener } from "./attractions/AttractionProvider.js";
 import { populateParks } from "./parks/ParkProvider.js"
 
 populateAttractions();
@@ -13,4 +13,4 @@ clickListener();
 changeListener();
 eateryListener();
 populateParks();
-
+attractionListener();

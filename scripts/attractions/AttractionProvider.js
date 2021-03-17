@@ -1,3 +1,5 @@
+import { attractionComponent } from "./AttractionComponent.js"
+
 let allAttractions = [];
 
 const useAttractions = () => [...allAttractions];
@@ -31,3 +33,29 @@ export const populateAttractions = () => {
         renderAttractions(goodAttractions)
     })
 }
+
+export const attractionListener = () => {
+
+    document.addEventListener("change", event => {
+    if(event.target.id === "bizarre__dropdown"){
+        const attractionValue = parseInt(event.target.value)
+        console.log(attractionValue)
+        showAttraction(attractionValue)
+    }
+    })
+}
+    const showAttraction = (eat) => { 
+        getAttractions()
+        .then( response => {
+            return response;
+        })
+        .then( () => {
+            const attractionArray = useAttractions().filter(oneAttraction => {
+                if(oneAttraction.id === eat){
+                    return oneAttraction
+                }
+            })
+            const attractionElement = document.querySelector(".itinerary-preview__attractions");
+            attractionElement.innerHTML = attractionComponent(attractionArray[0])
+        })
+    }
