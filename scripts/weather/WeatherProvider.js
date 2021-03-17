@@ -23,13 +23,26 @@ export const getWeather = () => {
 
 // 
 // Need to convert dt
+const convertTime = (t) => {
+    
+}
+
+// need to convert temp 
+//   public static double kelvinsToFahrenheit(double k) {
+    // return ((k - 273.15) * 1.8) + 32;}
+
+    const convertTemp = (k) => {
+        let temperature = (((k - 273.15) * 1.8) + 32)
+        return temperature
+
+    }
 
 const ForecastCard = (weatherObj) => {
     return `
     <h2>Weather Forecast:</h2>
                 <ul>
                         <li class ="day">${weatherObj.dt} </li>
-                    <li class ="temp">${weatherObj.temp}</li>
+                    <li class ="temp">${convertTemp(weatherObj.temp)}</li>
                     <li class = "description">${weatherObj.weather.description}</li>
                 </ul>
     `
