@@ -39,38 +39,56 @@ export const populateEateries = () => {
     )
 }
 
-export const eateryListener = () => { getEateries()
-    .then( () => {
-        const listenerArray = useEateries()
-        console.log(listenerArray)
+// UNDER CONSTRUCTION=================================================
+const eatComponent = (object) => {
+    return `
+    <h3>Preview Box</h3>
+    <ul>
+        <li>Name:${object.businessName}</li>
+        <li>City:${object.city}</li>
+    </ul>
+    <input id="itinerary-name" type="text" placeholder="Name your adventure">
+    <button id="itinerary__save">Save</button>`
+}
+export const eateryListener = () => {
 
-        const eatery = (eatObj) => {
-            return eatObj.id
+        document.addEventListener("change", event => {
+        if(event.target.id === "eateries"){
+            const eateryValue = event.target.value
+            showEatery(eateryValue)
+        }
+        })
+
+        const showEatery = (eat) => { 
+            getEateries()
+            .then( response => {
+                return response;
+                
+            })
+            .then( () => {
+                const eateryArray = useEateries().filter(oneEatery => {
+                    if(oneEatery.id === eat){
+                        return oneEatery
+                    }
+                })
+                    const eatElement = document.querySelector(".itinerary-preview__box");
+                    eatElement.innerHTML = eatComponent(eateryArray)
+            })
+
+            
         }
 
-        let eateryValue = "";
-
-        for (const oneObject of listenerArray) {
-            eateryValue += eatery(oneObject)
-            console.log(eateryValue)
-        }
-
-
-    }
-)
-    
 }
 
 
-const dropdown = document.querySelector(".dropdown-container")
 
 
-// document.addEventListener("click", event => {
-//     switch(event.target.id){
-//         case `${listenerArray.id}`:
-//             console.log(`You clicked ${listenerArray.id}`)
-//             break;
-//         default:
-//             console.log("There is nothing selected, only Zuul")
-//     }
-// })
+        // const eateryArray = useEateries().filter(singleObject => {
+        //     if(singleObject.id === eateryValue){
+        //         return singleObject
+        //     }
+        // })
+        // console.log(eateryArray)
+        // if (eateryArray.id === eateryValue){
+        //     console.log("it fucking worked!")
+        // }
