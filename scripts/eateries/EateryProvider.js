@@ -32,8 +32,7 @@ export const populateEateries = () => {
     getEateries()
     .then( () => {
         const goodEats = useEateries()
-<<<<<<< HEAD
-        render(goodEats)
+        renderEats(goodEats)
     }
 
     )
@@ -42,7 +41,7 @@ export const populateEateries = () => {
 export const eateryListener = () => {
 
         document.addEventListener("change", event => {
-        if(event.target.id === "eateries"){
+        if(event.target.id === "eateries__dropdown"){
             const eateryValue = parseInt(event.target.value)
             console.log(eateryValue)
             showEatery(eateryValue)
@@ -64,8 +63,3 @@ export const eateryListener = () => {
                 eatElement.innerHTML = eatComponent(eateryArray[0])
             })
         }
-=======
-        renderEats(goodEats)
-    })
-}
->>>>>>> main
