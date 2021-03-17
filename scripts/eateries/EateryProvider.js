@@ -1,3 +1,4 @@
+import { eatComponent } from "./EateryComponent.js"
 let allEateries = []
 
 const useEateries = () => [...allEateries]
@@ -8,7 +9,6 @@ const getEateries = () => {
     .then(
         parsedResponse => {
         allEateries = parsedResponse
-
     })
 
 }
@@ -33,5 +33,33 @@ export const populateEateries = () => {
     .then( () => {
         const goodEats = useEateries()
         renderEats(goodEats)
-    })
+    }
+
+    )
 }
+
+export const eateryListener = () => {
+
+        document.addEventListener("change", event => {
+        if(event.target.id === "eateries__dropdown"){
+            const eateryValue = parseInt(event.target.value)
+            console.log(eateryValue)
+            showEatery(eateryValue)
+        }
+        })
+}
+        const showEatery = (eat) => { 
+            getEateries()
+            .then( response => {
+                return response;
+            })
+            .then( () => {
+                const eateryArray = useEateries().filter(oneEatery => {
+                    if(oneEatery.id === eat){
+                        return oneEatery
+                    }
+                })
+                const eatElement = document.querySelector(".itinerary-preview__eat");
+                eatElement.innerHTML = eatComponent(eateryArray[0])
+            })
+        }
