@@ -1,3 +1,4 @@
+import { eatComponent } from "./EateryComponent.js"
 let allEateries = []
 
 const useEateries = () => [...allEateries]
@@ -8,13 +9,11 @@ const getEateries = () => {
     .then(
         parsedResponse => {
         allEateries = parsedResponse
-        
-
     })
 
 }
 
-const render = (allTheEateries) => {
+const renderEats = (allTheEateries) => {
     
     const eateryTarget = document.querySelector("#eatery-select")
     
@@ -23,7 +22,7 @@ const render = (allTheEateries) => {
     }).join("")
     
     eateryTarget.innerHTML = `
-            <select name="eateries" id="eateries">
+            <select name="eateries" id="eateries__dropdown">
                 <option value="0">Select an Eatery</option>
                 ${options}
             </select>`
@@ -33,10 +32,34 @@ export const populateEateries = () => {
     getEateries()
     .then( () => {
         const goodEats = useEateries()
-        render(goodEats)
+        renderEats(goodEats)
     }
 
     )
 }
 
-const dropdown = document.querySelector(".dropdown-container")
+export const eateryListener = () => {
+
+        document.addEventListener("change", event => {
+        if(event.target.id === "eateries__dropdown"){
+            const eateryValue = parseInt(event.target.value)
+            console.log(eateryValue)
+            showEatery(eateryValue)
+        }
+        })
+}
+        const showEatery = (eat) => { 
+            getEateries()
+            .then( response => {
+                return response;
+            })
+            .then( () => {
+                const eateryArray = useEateries().filter(oneEatery => {
+                    if(oneEatery.id === eat){
+                        return oneEatery
+                    }
+                })
+                const eatElement = document.querySelector(".itinerary-preview__eat");
+                eatElement.innerHTML = eatComponent(eateryArray[0])
+            })
+        }
