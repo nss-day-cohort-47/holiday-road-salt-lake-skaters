@@ -1,24 +1,32 @@
 // imported API key 
 import { settings } from "../Settings.js"
-
+import {lat, long} from "../parks/ParkProvider.js"
 
 // array that holds copy of useWeatherCollection
 let weatherCollection = [];
 
 
 // function that returns copy of useWeatherCollection array
-  const useWeatherCollection =() => {
+export const useWeatherCollection =() => {
     return [...weatherCollection];
 }
 
 // created a function that fetchs forecast from API then return parsed array
- const getWeather = () => {
-    return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&exclude=current,minutely,hourly,alerts&units=imperial&appid=${settings.weatherKey}`)
+export const getWeather = () => {
+     if ( lat.length === 0 ){
+         return fetch (`https://api.openweathermap.org/data/2.5/onecall?lat=36.1627&lon=-86.7816&exclude=current,minutely,hourly,alerts&units=imperial&appid=${settings.weatherKey}`)
+         .then(response => response.json())
+         .then(parsedResponse => {
+             weatherCollection = parsedResponse.daily.slice(0, 5)})}
+
+     else {
+    return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=current,minutely,hourly,alerts&units=imperial&appid=${settings.weatherKey}`)
     .then(response => response.json())
     .then(parsedResponse => {
-        weatherCollection = parsedResponse.daily.slice(0, 5)
-        console.log(weatherCollection);
-    })
+        weatherCollection = parsedResponse.daily.slice(0, 5)})
+
+       
+    }
 }
 
 // create a function to convert timestamp to date 
@@ -27,7 +35,8 @@ const convertTime = () => {
 const stamp = new Date();
 const date = stamp.toLocaleDateString();
 // Returns the date portion of a Date object as a string
-return date;
+const weekday = date(getShortWeekdays());
+return weekday;
 }
 
 // try to extract day from date using the following example
@@ -43,10 +52,10 @@ const ForecastCard = (weatherObj) => {
     console.log(weatherObj);
     return `
    
-                <ul list-style=none>
+                <ul>
                         <li class ="day">${convertTime(weatherObj.dt)} </li>
                     <li class ="temp">${weatherObj.temp.day}°</li>
-                    <li class = "description">${weatherObj.weather[0].description}</li>
+                    <li class = "description">${weatherObj.weather[0].description.toUpperCase()}</li>
                 </ul>
     `
 }

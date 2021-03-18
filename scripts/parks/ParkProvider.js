@@ -1,5 +1,6 @@
 import { settings } from "../Settings.js"
 import { parkComponent } from "./ParksComponent.js"
+import { useWeatherCollection, weatherList} from "../weather/WeatherProvider.js"
 
 
 let allParks = []
@@ -35,15 +36,22 @@ const render = (parkList) => {
 }
 
 
+
+
 export const populateParks = () => {
     getParks()
     .then( () => {
         const parks = useParks()
         render(parks)
-    }
-
-    )
+    } )
 }
+
+
+
+
+
+    
+
 
 export const parkListener = () => {
 
@@ -52,9 +60,12 @@ export const parkListener = () => {
             const parkValue = event.target.value
             console.log(parkValue)
             showPark(parkValue)
+           
         }
     })
 }
+export let lat = ""
+export let long = ""
 
 const showPark = (park) => {
     getParks()
@@ -65,10 +76,16 @@ const showPark = (park) => {
         // is this the array to target for weather?
         const parkArray = useParks().filter(onePark => {
             if(onePark.id === park){
+                lat = onePark.latitude
+                long= onePark.longitude
+            
                 return onePark
             }
         })
         const parkElement = document.querySelector(".itinerary-preview__park");
         parkElement.innerHTML = parkComponent(parkArray[0])
+    }
+    ).then (() => { weatherList()
     })
 }
+
