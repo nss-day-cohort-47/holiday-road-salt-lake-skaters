@@ -30,14 +30,17 @@ export const getWeather = () => {
 }
 
 // create a function to convert timestamp to date 
-const convertTime = () => {
+const convertTime = (date) => {
     
-const stamp = new Date();
-const date = stamp.toLocaleDateString();
+
+const newDate = new Date (date * 1000)
+let days = newDate.toLocaleDateString( "en-US",{ weekday: "long" });
 // Returns the date portion of a Date object as a string
-const weekday = date(getShortWeekdays());
-return weekday;
+
+return days;
 }
+
+
 
 // try to extract day from date using the following example
 // public static String getDayStringNew(LocalDate date, Locale locale) {
@@ -53,9 +56,9 @@ const ForecastCard = (weatherObj) => {
     return `
    
                 <ul>
-                        <li class ="day">${convertTime(weatherObj.dt)} </li>
+                        <li class ="day"><strong>${convertTime(weatherObj.dt)} </strong></li>
                     <li class ="temp">${weatherObj.temp.day}°</li>
-                    <li class = "description">${weatherObj.weather[0].description.toUpperCase()}</li>
+                    <li class = "description">${weatherObj.weather[0].description}</li>
                 </ul>
     `
 }
