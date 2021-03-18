@@ -1,4 +1,4 @@
-import { settings } from "../Setting.js"
+import { settings } from "../Settings.js"
 import { parkComponent } from "./ParksComponent.js"
 
 
@@ -12,11 +12,12 @@ const getParks = () => {
     .then(
         parsedResponse => {
         allParks = parsedResponse.data
-
+        
+        return allParks;
     })
 
 }
-console.log(useParks);
+
 
 const render = (parkList) => {
     
@@ -61,6 +62,7 @@ const showPark = (park) => {
         return response;
     })
     .then( () => {
+        // is this the array to target for weather?
         const parkArray = useParks().filter(onePark => {
             if(onePark.id === park){
                 return onePark
