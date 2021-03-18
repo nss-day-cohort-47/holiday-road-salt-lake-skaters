@@ -1,11 +1,11 @@
-const selectedPark = document.getElementById("national-park__dropdown")
-const selectedEatery = document.getElementById("eateries__dropdown")
-const selectedAttraction = document.getElementById("bizarre__dropdown")
+import { currentEatery } from "./eateries/EateryProvider.js";
+
+
 
 export const apiObj = () => {
-    const parkName = selectedPark.options[selectedPark.selectedIndex].text
-    const eateryName = selectedEatery.options[selectedEatery.selectedIndex].text
-    const attractionName = selectedAttraction.options[selectedAttraction.selectedIndex].text
+    const parkName = currentPark.fullName
+    const eateryName = currentEatery.businessName
+    const attractionName = currentAttraction.name
 
         const itinerary= {
        park: parkName,

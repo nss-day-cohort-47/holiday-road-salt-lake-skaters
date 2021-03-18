@@ -15,9 +15,6 @@ eateryListener();
 populateParks();
 attractionListener();
 parkListener();
-<<<<<<< HEAD
 saveListener();
 // saveButtonEnabler();
-=======
 eatDetails();
->>>>>>> f94528d5af1235e4b0ceb5ab8923a4830ea5984b
