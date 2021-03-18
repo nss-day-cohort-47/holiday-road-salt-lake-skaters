@@ -7,3 +7,11 @@ export const eatComponent = (object) => {
     </ul>
     <button id="eat-details">Details</button>`
 }
+
+export const eatDetailsComponent = (object) => {
+    return `
+    <h3>Eatery Details</h3>
+    <ul>
+        <li>Description: ${object.description}</li>
+    </ul>`
+}

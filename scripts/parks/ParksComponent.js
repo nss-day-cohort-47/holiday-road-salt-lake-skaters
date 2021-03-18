@@ -7,3 +7,12 @@ export const parkComponent = (object) => {
     </ul>
     <button id="park-details">Details</button>`
 }
+
+export const parkDetailsComponent = (object) => {
+    return `
+    <h3>Park Details</h3>
+    <ul>
+        <li>Description: ${object.description}</li>
+    </ul>
+    `
+}
