@@ -29,6 +29,14 @@ footer {
     /* justify-content: flex-end; */
     flex-direction: column;
     flex-grow: 1;
+    /* float: left; */
+    overflow: scroll;
+    max-height: 450px;
+
+}
+
+.forecast ul {
+    list-style-type:none;
 
 }
 

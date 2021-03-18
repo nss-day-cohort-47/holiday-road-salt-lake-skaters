@@ -13,7 +13,7 @@ const getParks = () => {
         parsedResponse => {
         allParks = parsedResponse.data
         
-        return allParks.data;
+        return allParks;
     })
 
 }
@@ -62,6 +62,7 @@ const showPark = (park) => {
         return response;
     })
     .then( () => {
+        // is this the array to target for weather?
         const parkArray = useParks().filter(onePark => {
             if(onePark.id === park){
                 return onePark
