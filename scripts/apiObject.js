@@ -1,5 +1,6 @@
 import { currentEatery } from "./eateries/EateryProvider.js";
-
+import { currentPark } from "./parks/ParkProvider.js";
+import { currentAttraction } from "./attractions/AttractionProvider.js";
 
 
 export const apiObj = () => {
