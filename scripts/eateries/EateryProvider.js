@@ -49,14 +49,14 @@ export const eateryListener = () => {
         })
 }
 
-let eateryObject = [];
+export let currentEatery = [];
 
 const showEatery = (eat) => { 
     getEateries()
     .then( () => {
         const eateryArray = useEateries().filter(oneEatery => {
             if(oneEatery.id === eat){
-                eateryObject = oneEatery
+                currentEatery = oneEatery
                 return oneEatery
                     }
                 })
@@ -70,7 +70,7 @@ export const eatDetails = () => {
         switch(event.target.id){
             case "eat-details":
                 const eatElement = document.querySelector("#details-container__eatery")
-                eatElement.innerHTML = eatDetailsComponent(eateryObject);
+                eatElement.innerHTML = eatDetailsComponent(currentEatery);
 
         }
     })
