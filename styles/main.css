@@ -82,6 +82,7 @@ background-size:cover;
     /* border: 5px solid yellow; */
     justify-content: center;
     height: 250px;
+    margin-bottom: 10px;
 }
 
 .details-container {
