@@ -67,6 +67,8 @@ export const parkListener = () => {
 export let lat = ""
 export let long = ""
 
+let parkObject = [];
+
 const showPark = (park) => {
     getParks()
     .then(response => {
