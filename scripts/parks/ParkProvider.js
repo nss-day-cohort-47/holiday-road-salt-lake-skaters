@@ -1,5 +1,5 @@
 import { settings } from "../Settings.js"
-import { parkComponent } from "./ParksComponent.js"
+import { parkComponent, parkDetailsComponent } from "./ParksComponent.js"
 
 
 let allParks = []
@@ -56,7 +56,7 @@ export const parkListener = () => {
     })
 }
 
-let parkObject = [];
+export let currentPark = [];
 
 const showPark = (park) => {
     getParks()
@@ -67,7 +67,8 @@ const showPark = (park) => {
         // is this the array to target for weather?
         const parkArray = useParks().filter(onePark => {
             if(onePark.id === park){
-                parkObject = onePark
+                currentPark = onePark
+                console.log(currentPark.description)
                 return onePark
             }
         })
@@ -76,3 +77,12 @@ const showPark = (park) => {
     })
 }
 
+export const parkDetails = () => {
+    document.addEventListener("click", event => {
+        switch(event.target.id){
+            case "park-details":
+                const parkElement = document.querySelector("#details-container__park")
+                parkElement.innerHTML = parkDetailsComponent(currentPark)
+        }
+    })
+}
