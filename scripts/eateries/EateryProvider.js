@@ -1,4 +1,4 @@
-import { eatComponent } from "./EateryComponent.js"
+import { eatComponent, eatDetailsComponent } from "./EateryComponent.js"
 let allEateries = []
 
 const useEateries = () => [...allEateries]
@@ -48,18 +48,30 @@ export const eateryListener = () => {
         }
         })
 }
-        const showEatery = (eat) => { 
-            getEateries()
-            .then( response => {
-                return response;
-            })
-            .then( () => {
-                const eateryArray = useEateries().filter(oneEatery => {
-                    if(oneEatery.id === eat){
-                        return oneEatery
+
+export let currentEatery = [];
+
+const showEatery = (eat) => { 
+    getEateries()
+    .then( () => {
+        const eateryArray = useEateries().filter(oneEatery => {
+            if(oneEatery.id === eat){
+                currentEatery = oneEatery
+                return oneEatery
                     }
                 })
-                const eatElement = document.querySelector(".itinerary-preview__eat");
-                eatElement.innerHTML = eatComponent(eateryArray[0])
+        const eatElement = document.querySelector(".itinerary-preview__eat");
+        eatElement.innerHTML = eatComponent(eateryArray[0])
             })
         }
+
+export const eatDetails = () => {
+    document.addEventListener("click", event => {
+        switch(event.target.id){
+            case "eat-details":
+                const eatElement = document.querySelector("#details-container__eatery")
+                eatElement.innerHTML = eatDetailsComponent(currentEatery);
+
+        }
+    })
+}
