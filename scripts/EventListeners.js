@@ -17,30 +17,36 @@ export const clickListener = () => {
     })
 };
 
-export const changeListener = () => {
-    document.addEventListener("change", event => {
-        switch(event.target.id){
-            case "national-park__dropdown":
-                switch(event.target.value){
-                    case "1":
-                        console.log("You selected Yosemite")
-                        break;
-                    case "2": 
-                        console.log("You selected Niagara")
-                    default: 
-                        console.log("There is nothing selected, only Zuul")
-                }
-            case "eateries__dropdown":
-                switch(event.target.value){
-                    case "bob":
-                        console.log("You selected Bob's Burgers")
-                }
-            case "bizarre__dropdown":
-                switch(event.target.value){
-                case "beard":
-                console.log("You selected the Bearded Lady")
-                }
 
-        }
-    })
-}
+
+
+
+
+
+// export const changeListener = () => {
+//     document.addEventListener("change", event => {
+//         switch(event.target.id){
+//             case "national-park__dropdown":
+//                 switch(event.target.value){
+//                     case "1":
+//                         console.log("You selected Yosemite")
+//                         break;
+//                     case "2": 
+//                         console.log("You selected Niagara")
+//                     default: 
+//                         console.log("There is nothing selected, only Zuul")
+//                 }
+//             case "eateries__dropdown":
+//                 switch(event.target.value){
+//                     case "bob":
+//                         console.log("You selected Bob's Burgers")
+//                 }
+//             case "bizarre__dropdown":
+//                 switch(event.target.value){
+//                 case "beard":
+//                 console.log("You selected the Bearded Lady")
+//                 }
+
+//         }
+//     })
+// }

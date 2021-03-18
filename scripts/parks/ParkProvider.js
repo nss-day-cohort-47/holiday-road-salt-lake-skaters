@@ -56,6 +56,8 @@ export const parkListener = () => {
     })
 }
 
+let parkObject = [];
+
 const showPark = (park) => {
     getParks()
     .then(response => {
@@ -65,6 +67,7 @@ const showPark = (park) => {
         // is this the array to target for weather?
         const parkArray = useParks().filter(onePark => {
             if(onePark.id === park){
+                parkObject = onePark
                 return onePark
             }
         })
@@ -72,3 +75,4 @@ const showPark = (park) => {
         parkElement.innerHTML = parkComponent(parkArray[0])
     })
 }
+

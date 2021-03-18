@@ -17,7 +17,7 @@ footer {
 .section-center {
     display: flex;
     /* border: 5px solid green; */
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
     flex-grow: 3;
 
@@ -49,16 +49,50 @@ footer {
 .dropdown-container {
     display: flex;
     /* border: 5px solid aqua; */
+    justify-content: center;
 }
 
 .preview-container {
     display: flex;
     /* border: 5px solid yellow; */
+    justify-content: center;
+    height: 250px;
+}
+
+.details-container {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    border: 5px red solid;
+}
+
+#details-container__park, #details-container__eatery, #details-container__attraction {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: 5px green solid;
+    width: 100px;
 }
 
 .itinerary-preview {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.itinerary-preview__flex {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+
+}
+
+.itinerary-preview__park, .itinerary-preview__attractions, .itinerary-preview__eat {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+
 }
 
 .weather-forecast {
