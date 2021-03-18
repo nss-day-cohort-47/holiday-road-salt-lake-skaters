@@ -1,5 +1,5 @@
 import { settings } from "../Settings.js"
-import { parkComponent } from "./ParksComponent.js"
+import { parkComponent, parkDetailsComponent } from "./ParksComponent.js"
 import { useWeatherCollection, weatherList} from "../weather/WeatherProvider.js"
 
 
@@ -67,7 +67,7 @@ export const parkListener = () => {
 export let lat = ""
 export let long = ""
 
-let parkObject = [];
+export let currentPark = [];
 
 const showPark = (park) => {
     getParks()
@@ -78,6 +78,8 @@ const showPark = (park) => {
         // is this the array to target for weather?
         const parkArray = useParks().filter(onePark => {
             if(onePark.id === park){
+                currentPark = onePark
+                console.log(currentPark.description)
                 lat = onePark.latitude
                 long= onePark.longitude
             
@@ -91,3 +93,12 @@ const showPark = (park) => {
     })
 }
 
+export const parkDetails = () => {
+    document.addEventListener("click", event => {
+        switch(event.target.id){
+            case "park-details":
+                const parkElement = document.querySelector("#details-container__park")
+                parkElement.innerHTML = parkDetailsComponent(currentPark)
+        }
+    })
+}
