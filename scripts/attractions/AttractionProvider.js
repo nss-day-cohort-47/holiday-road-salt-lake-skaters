@@ -1,4 +1,4 @@
-import { attractionComponent } from "./AttractionComponent.js"
+import { attractionComponent, attractionDetailsComponent } from "./AttractionComponent.js"
 
 let allAttractions = [];
 
@@ -44,7 +44,10 @@ export const attractionListener = () => {
     }
     })
 }
-    const showAttraction = (eat) => { 
+
+export let currentAttraction = [];
+
+const showAttraction = (eat) => { 
         getAttractions()
         .then( response => {
             return response;
@@ -52,6 +55,7 @@ export const attractionListener = () => {
         .then( () => {
             const attractionArray = useAttractions().filter(oneAttraction => {
                 if(oneAttraction.id === eat){
+                    currentAttraction = oneAttraction
                     return oneAttraction
                 }
             })
@@ -59,3 +63,14 @@ export const attractionListener = () => {
             attractionElement.innerHTML = attractionComponent(attractionArray[0])
         })
     }
+
+export const attractionDetails = () => {
+    document.addEventListener("click", event => {
+        switch(event.target.id){
+            case "attraction-details":
+                const attractionElement = document.querySelector("#details-container__attraction");
+                attractionElement.innerHTML = attractionDetailsComponent(currentAttraction);
+        }
+    })
+    
+}
