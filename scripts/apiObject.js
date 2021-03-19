@@ -2,6 +2,8 @@ import { currentEatery } from "./eateries/EateryProvider.js";
 import { currentPark } from "./parks/ParkProvider.js";
 import { currentAttraction } from "./attractions/AttractionProvider.js";
 
+// const itineraryName = document.getElementById("itinerary-name").placeholder
+
 
 export const apiObj = () => {
     const parkName = currentPark.fullName

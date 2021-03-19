@@ -1,3 +1,6 @@
+html{
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
 body{
     background-color:#DBDFDD ;
 }
@@ -35,7 +38,7 @@ nav {
     justify-content: center;
     text-align: center;
     color: whitesmoke;
-    font-family: 'Nothing You Could Do', cursive;
+    
 }
 
 .logo{
@@ -68,7 +71,7 @@ background-size:cover;
     flex-grow: 1;
     padding: 1em;
     margin: 1em;
-    background-color: #B2917D;
+    background-color: #7DA890;
     border-radius: .5em;
 
 } 
@@ -86,7 +89,7 @@ background-size:cover;
     flex-grow: 1;
     padding: 1em;
     margin: 1em;
-    background-color: #B2917D;
+    background-color: #7DA890;
     border-radius: .5em;
 }
 
@@ -123,6 +126,8 @@ background-size:cover;
     border: 3px black solid;
     border-radius: .5em;
     margin: 5px;
+    padding: 2em;
+    overflow: scroll;
     /* width: 100px; */
 }
 
