@@ -15,3 +15,12 @@ export const eatDetailsComponent = (object) => {
         <li>Description: ${object.description}</li>
     </ul>`
 }
+
+const clearComponent = () => {
+    return ``
+}
+
+export const eatClear = () => {
+    const clearElement = document.querySelector("#details-container__eatery")
+    clearElement.innerHTML = clearComponent()
+}

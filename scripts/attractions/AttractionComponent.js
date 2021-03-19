@@ -15,3 +15,12 @@ export const attractionDetailsComponent = (object) => {
         <li>Description: ${object.description}</li>
     </ul>`
 }
+
+const clearComponent = () => {
+    return ``
+}
+
+export const attractionClear = () => {
+    const clearElement = document.querySelector("#details-container__attraction")
+    clearElement.innerHTML = clearComponent()
+}

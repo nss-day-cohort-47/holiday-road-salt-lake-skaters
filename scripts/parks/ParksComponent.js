@@ -16,3 +16,12 @@ export const parkDetailsComponent = (object) => {
     </ul>
     `
 }
+
+const clearComponent = () => {
+    return ``
+}
+
+export const parkClear = () => {
+    const clearElement = document.querySelector("#details-container__park")
+    clearElement.innerHTML = clearComponent()
+}
