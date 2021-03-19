@@ -92,14 +92,14 @@ background-size:cover;
     margin-top: 10px;
     justify-content: center;
     height: 500px;
-    border: 5px red solid;
+    /* border: 5px red solid; */
 }
 
 #details-container__park, #details-container__eatery, #details-container__attraction {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    border: 5px green solid;
+    /* border: 5px green solid; */
     width: 100px;
 }
 

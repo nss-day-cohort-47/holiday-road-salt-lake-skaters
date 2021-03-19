@@ -1,4 +1,4 @@
-import { attractionComponent, attractionDetailsComponent } from "./AttractionComponent.js"
+import { attractionComponent, attractionDetailsComponent, attractionClear } from "./AttractionComponent.js"
 
 let allAttractions = [];
 
@@ -56,6 +56,7 @@ const showAttraction = (eat) => {
             const attractionArray = useAttractions().filter(oneAttraction => {
                 if(oneAttraction.id === eat){
                     currentAttraction = oneAttraction
+                    attractionClear()
                     return oneAttraction
                 }
             })

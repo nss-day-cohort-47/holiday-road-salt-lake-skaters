@@ -1,5 +1,5 @@
 import { settings } from "../Settings.js"
-import { parkComponent, parkDetailsComponent } from "./ParksComponent.js"
+import { parkComponent, parkDetailsComponent, parkClear } from "./ParksComponent.js"
 import { useWeatherCollection, weatherList} from "../weather/WeatherProvider.js"
 
 
@@ -79,10 +79,10 @@ const showPark = (park) => {
         const parkArray = useParks().filter(onePark => {
             if(onePark.id === park){
                 currentPark = onePark
-                console.log(currentPark.description)
+                // console.log(currentPark.description)
                 lat = onePark.latitude
                 long= onePark.longitude
-            
+                parkClear()
                 return onePark
             }
         })

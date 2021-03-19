@@ -1,4 +1,4 @@
-import { eatComponent, eatDetailsComponent } from "./EateryComponent.js"
+import { eatComponent, eatDetailsComponent, eatClear } from "./EateryComponent.js"
 let allEateries = []
 
 const useEateries = () => [...allEateries]
@@ -45,6 +45,7 @@ export const eateryListener = () => {
             const eateryValue = parseInt(event.target.value)
             console.log(eateryValue)
             showEatery(eateryValue)
+            eatClear()
         }
         })
 }
