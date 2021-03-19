@@ -1,3 +1,5 @@
+import { itineraryHTML } from "./apiObject.js";
+
 let allItineraries = [];
 
 export const useItineraries = () => {
@@ -22,4 +24,12 @@ export const postItinerary = (postEntry) => {
         body: JSON.stringify(postEntry)
     })
     .then(response => response.json())
+}
+
+export const itineraryList = (itinList) => {
+    let itinHTML = "";
+    for (const singleObj of itinList) {
+        itinHTML += itineraryHTML(singleObj); 
+    }
+    return itinHTML;
 }
