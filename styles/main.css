@@ -37,7 +37,7 @@ nav {
     display: flex;
     justify-content: center;
     text-align: center;
-    color: whitesmoke;
+    
     
 }
 
@@ -115,6 +115,8 @@ background-size:cover;
     margin: 20px 0 40px 0;
     justify-content: center;
     height: 300px;
+    flex-grow: 1;
+    
     /* border: 5px red solid; */
 }
 
@@ -128,6 +130,8 @@ background-size:cover;
     margin: 5px;
     padding: 2em;
     overflow: scroll;
+    font-size: smaller;
+    
     /* width: 100px; */
 }
 
@@ -149,6 +153,7 @@ background-size:cover;
     align-items: center;
     flex-direction: column;
     margin: 10px;
+    
 
 }
 
@@ -167,10 +172,6 @@ background-size:cover;
     height: 2em;
     
     
-    
-    
-
-
 } 
 #itinerary__save {
     margin: 0 40px;
