@@ -115,7 +115,7 @@ background-size:cover;
     margin: 20px 0 40px 0;
     justify-content: center;
     height: 300px;
-    flex-grow: 1;
+    
     
     /* border: 5px red solid; */
 }
@@ -157,24 +157,29 @@ background-size:cover;
 
 }
 
-.save-button{
+#save-button{
     display:flex;
     flex-direction: column;
     justify-content: center;
     margin: 1em 20em;
 
-    /* width: 300px; */
+    
 
 }
-#itinerary-name{
+/* #itinerary-name{
     margin-bottom: 1em;
     text-align: center;
     height: 2em;
     
     
-} 
+}  */
+
 #itinerary__save {
-    margin: 0 40px;
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    
+    /* width: 300px; */
     
 }
 
