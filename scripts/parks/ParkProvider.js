@@ -61,7 +61,9 @@ export const parkListener = () => {
             console.log(parkValue)
             showPark(parkValue)
            
+           
         }
+        
     })
 }
 export let lat = ""
@@ -86,12 +88,16 @@ const showPark = (park) => {
                 return onePark
             }
         })
+       
         const parkElement = document.querySelector(".itinerary-preview__park");
         parkElement.innerHTML = parkComponent(parkArray[0])
     }
     ).then (() => { weatherList()
     })
+    
+    
 }
+
 
 export const parkDetails = () => {
     document.addEventListener("click", event => {

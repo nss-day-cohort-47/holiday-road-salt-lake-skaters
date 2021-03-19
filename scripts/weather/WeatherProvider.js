@@ -48,7 +48,7 @@ const convertTime = (date) => {
 
 
 const ForecastCard = (weatherObj) => {
-    console.log(weatherObj);
+    // console.log(weatherObj);
     return `
    
                 
@@ -64,7 +64,7 @@ export const weatherList = () => {
     let weatherHTML = "";
     getWeather().then(() => {
         const weatherArray = useWeatherCollection();
-        console.log(weatherArray);
+        // console.log(weatherArray);
         for (const day of weatherArray) {
             weatherHTML += ForecastCard(day)
 

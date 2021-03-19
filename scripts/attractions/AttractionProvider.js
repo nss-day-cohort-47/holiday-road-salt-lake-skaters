@@ -41,6 +41,9 @@ export const attractionListener = () => {
         const attractionValue = parseInt(event.target.value)
         console.log(attractionValue)
         showAttraction(attractionValue)
+        
+    }
+    
     }
     })
 }
@@ -59,10 +62,14 @@ const showAttraction = (eat) => {
                     return oneAttraction
                 }
             })
+            
             const attractionElement = document.querySelector(".itinerary-preview__attractions");
             attractionElement.innerHTML = attractionComponent(attractionArray[0])
         })
+        
+       
     }
+    
 
 export const attractionDetails = () => {
     document.addEventListener("click", event => {
@@ -74,3 +81,4 @@ export const attractionDetails = () => {
     })
     
 }
+

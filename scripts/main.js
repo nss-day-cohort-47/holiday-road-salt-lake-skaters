@@ -1,15 +1,10 @@
 import { weatherList } from "./weather/WeatherProvider.js"
-
-
-// showWeatherList();
-weatherList();
-
 import { populateEateries, eateryListener, eatDetails } from "./eateries/EateryProvider.js";
 import { populateAttractions, attractionListener, attractionDetails } from "./attractions/AttractionProvider.js";
 import { populateParks, parkListener, parkDetails} from "./parks/ParkProvider.js"
 import { saveListener } from "./saveButton.js";
 
-
+weatherList();
 populateAttractions();
 populateEateries();
 eateryListener();
@@ -21,3 +16,5 @@ saveListener();
 eatDetails();
 parkDetails();
 attractionDetails();
+
+
