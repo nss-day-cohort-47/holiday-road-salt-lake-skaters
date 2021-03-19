@@ -18,8 +18,12 @@ export const apiObj = () => {
     return itinerary
 }
 
-// export const clickListener = () => {
-//     document.addEventListener("click", event => {
-         
-//      })
-//  };
+export const itineraryHTML = (apiObject) => {
+    return `
+            <ul>
+                <li>National Park: ${apiObject.park}</li>
+                <li>Restaurant: ${apiObject.eatery}</li>
+                <li>Attraction: ${apiObject.attraction}</li>
+            </ul> 
+            <hr>`
+}
