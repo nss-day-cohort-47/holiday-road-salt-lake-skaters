@@ -1,3 +1,4 @@
+import { saveEnabler } from "../SaveButtonComponent.js";
 import { attractionComponent, attractionDetailsComponent, attractionClear } from "./AttractionComponent.js"
 
 let allAttractions = [];
@@ -41,6 +42,7 @@ export const attractionListener = () => {
         const attractionValue = parseInt(event.target.value)
         console.log(attractionValue)
         showAttraction(attractionValue)
+        attractionClear()
     }
     })
 }
@@ -57,12 +59,16 @@ const showAttraction = (eat) => {
                 if(oneAttraction.id === eat){
                     currentAttraction = oneAttraction
                     attractionClear()
+                    
                     return oneAttraction
                 }
             })
             const attractionElement = document.querySelector(".itinerary-preview__attractions");
             attractionElement.innerHTML = attractionComponent(attractionArray[0])
         })
+        .then( () => {
+            saveEnabler()
+})
     }
 
 export const attractionDetails = () => {

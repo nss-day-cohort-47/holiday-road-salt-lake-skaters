@@ -3,7 +3,7 @@ import { populateAttractions, attractionListener, attractionDetails } from "./at
 import { populateParks, parkListener, parkDetails} from "./parks/ParkProvider.js"
 import { saveListener } from "./saveButton.js";
 import { weatherList } from "./weather/WeatherProvider.js"
-
+import { saveButton } from "./SaveButtonComponent.js"
 
 populateAttractions();
 populateEateries();
@@ -18,3 +18,4 @@ parkDetails();
 attractionDetails();
 // showWeatherList();
 weatherList();
+saveButton();
