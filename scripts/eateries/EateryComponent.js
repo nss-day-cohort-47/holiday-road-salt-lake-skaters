@@ -16,10 +16,12 @@ export const eatDetailsComponent = (object) => {
     </ul>`
 }
 
+// Sets details field to an empty space "resetting" that area
 const clearComponent = () => {
     return ``
 }
 
+// Sets HTML on the DOM to the empty string in clearComponent
 export const eatClear = () => {
     const clearElement = document.querySelector("#details-container__eatery")
     clearElement.innerHTML = clearComponent()
