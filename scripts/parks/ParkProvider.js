@@ -1,7 +1,7 @@
 import { settings } from "../Settings.js"
-import { parkComponent, parkDetailsComponent } from "./ParksComponent.js"
+import { parkComponent, parkDetailsComponent, parkClear } from "./ParksComponent.js"
 import { useWeatherCollection, weatherList} from "../weather/WeatherProvider.js"
-
+import { saveEnabler } from "../SaveButtonComponent.js"
 
 let allParks = []
 
@@ -19,7 +19,6 @@ const getParks = () => {
 
 }
 
-
 const render = (parkList) => {
     
     const parkTarget = document.querySelector("#national-park-select")
@@ -35,9 +34,6 @@ const render = (parkList) => {
             </select>`
 }
 
-
-
-
 export const populateParks = () => {
     getParks()
     .then( () => {
@@ -46,13 +42,6 @@ export const populateParks = () => {
     } )
 }
 
-
-
-
-
-    
-
-
 export const parkListener = () => {
 
     document.addEventListener("change", event => {
@@ -60,8 +49,7 @@ export const parkListener = () => {
             const parkValue = event.target.value
             console.log(parkValue)
             showPark(parkValue)
-           
-           
+            saveEnabler()
         }
         
     })
@@ -81,10 +69,11 @@ const showPark = (park) => {
         const parkArray = useParks().filter(onePark => {
             if(onePark.id === park){
                 currentPark = onePark
-                console.log(currentPark.description)
+                // console.log(currentPark.description)
                 lat = onePark.latitude
                 long= onePark.longitude
-            
+                
+                
                 return onePark
             }
         })
@@ -94,8 +83,9 @@ const showPark = (park) => {
     }
     ).then (() => { weatherList()
     })
-    
-    
+    .then( () => {
+        saveEnabler()
+})
 }
 
 

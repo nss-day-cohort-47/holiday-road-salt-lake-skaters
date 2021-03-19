@@ -16,3 +16,14 @@ export const parkDetailsComponent = (object) => {
     </ul>
     `
 }
+
+// Sets details field to an empty space "resetting" that area
+const clearComponent = () => {
+    return ``
+}
+
+// Sets HTML on the DOM to the empty string in clearComponent
+export const parkClear = () => {
+    const clearElement = document.querySelector("#details-container__park")
+    clearElement.innerHTML = clearComponent()
+}

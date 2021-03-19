@@ -1,4 +1,5 @@
-import { eatComponent, eatDetailsComponent } from "./EateryComponent.js"
+import { saveEnabler } from "../SaveButtonComponent.js"
+import { eatComponent, eatDetailsComponent, eatClear } from "./EateryComponent.js"
 let allEateries = []
 
 
@@ -46,6 +47,9 @@ export const eateryListener = () => {
             const eateryValue = parseInt(event.target.value)
             console.log(eateryValue)
             showEatery(eateryValue)
+            eatClear()       
+            
+            
         }
         
         })
@@ -66,6 +70,9 @@ const showEatery = (eat) => {
         const eatElement = document.querySelector(".itinerary-preview__eat");
         eatElement.innerHTML = eatComponent(eateryArray[0])
             })
+            .then( () => {
+                saveEnabler()
+           })
         }
 
 export const eatDetails = () => {
