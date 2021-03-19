@@ -51,11 +51,12 @@ const ForecastCard = (weatherObj) => {
     console.log(weatherObj);
     return `
    
-                <ul>
-                        <li class ="day"><strong>${convertTime(weatherObj.dt)} </strong></li>
-                    <li class ="temp">${weatherObj.temp.day}°</li>
-                    <li class = "description">${weatherObj.weather[0].description}</li>
-                </ul>
+                
+                    <h3 class ="day">${convertTime(weatherObj.dt)}</h3>
+                
+                    <h4 class ="temp">${weatherObj.temp.day}°</h4>
+                    <p class = "description">${weatherObj.weather[0].description}</p>
+                
     `
 }
 // create and export function 

@@ -18,17 +18,30 @@ footer {
     display: flex;
     background-color:#213B2C;
     color:whitesmoke;
+    height:50px;
+    justify-content:right;
+    margin-bottom: 0;
 }
 nav {
         display: flex;
+        
         height: 70px;
         background-color:#213B2C;
         
+        
 }
+.headline{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Nothing You Could Do', cursive;
+}
+
 .logo{
 
     justify-content: flex-start;
-    border: 4px solid ;
+    border: 2px solid ;
 }
 
 .banner-image{
@@ -42,7 +55,6 @@ background-size:cover;
 }
 .section-center {
     display: flex;
-    /* border: 5px solid green; */
     justify-content: flex-start;
     flex-direction: column;
     flex-grow: 3;
@@ -54,27 +66,35 @@ background-size:cover;
     border: 1px solid black;
     flex-direction: column;
     flex-grow: 1;
-    /* overflow: scroll; */
-    max-height: 450px;
-    background-color: #CCDDD3;
+    padding: 1em;
+    margin: 1em;
+    background-color: #B2917D;
+    border-radius: .5em;
 
 } 
 
-.forecast ul {
-    list-style-type:none;
+.forecast {
+    
+
 
 }
 
 .section-right {
     display: flex;
-    /* border: 5px solid purple; */
+    border: 1px solid black;
+    flex-direction: column;
     flex-grow: 1;
+    padding: 1em;
+    margin: 1em;
+    background-color: #B2917D;
+    border-radius: .5em;
 }
 
 .dropdown-container {
     display: flex;
-    /* border: 5px solid aqua; */
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+    
 }
 
 .preview-container {
@@ -89,18 +109,21 @@ background-size:cover;
 .details-container {
     padding-top: 5px;
     display: flex;
-    margin-top: 10px;
+    margin: 20px 0 40px 0;
     justify-content: center;
-    height: 500px;
-    border: 5px red solid;
+    height: 300px;
+    /* border: 5px red solid; */
 }
 
 #details-container__park, #details-container__eatery, #details-container__attraction {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    border: 5px green solid;
-    width: 100px;
+    justify-content: space-evenly;
+    border: 3px black solid;
+    border-radius: .5em;
+    margin: 5px;
+    /* width: 100px; */
 }
 
 .itinerary-preview {
@@ -122,5 +145,30 @@ background-size:cover;
     flex-direction: column;
     margin: 10px;
 
+}
+
+.save-button{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em 20em;
+
+    /* width: 300px; */
+
+}
+#itinerary-name{
+    margin-bottom: 1em;
+    text-align: center;
+    height: 2em;
+    
+    
+    
+    
+
+
+} 
+#itinerary__save {
+    margin: 0 40px;
+    
 }
 

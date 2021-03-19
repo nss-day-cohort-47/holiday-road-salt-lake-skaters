@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holiday Road</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <img class="logo"src="styles/images/Logo.png" alt="logo">
+        <h1 class="headline">Salt Lake Skaters</h1>
     </nav>
     <header>
         <div class= "banner-image"></div>
-        <h1>Salt Lake Skaters</h1>
+        
         <h3>Want to take a road trip to a beautiful national park?
             <br>
         Enjoy delicous food and even stop at an amazing attraction?
@@ -34,20 +37,20 @@
         <section class="dropdown-container">
             <div id="national-park-select">
                 <select id="national-park__dropdown">
-                    <option value="0">Select a Park</option>
+                    <!-- <option value="0">Select a Park</option>
                     <option value="1">Yosemite</option>
-                    <option value="2">Niagra Falls</option>
+                    <option value="2">Niagra Falls</option> -->
                 </select>
             </div>
             <div id="eatery-select">
                 <select name="eateries" id="eateries__dropdown">
-                    <option value="0">Select an Eatery</option>
+                    <!-- <option value="0">Select an Eatery</option> -->
                 </select>
             </div>
             <div id="bizarre-select">
                 <select name="bizarre" id="bizarre__dropdown">
-                    <option value="0">Select an Attraction</option>
-                    <option value="beard">Bearded Lady</option>
+                    <!-- <option value="0">Select an Attraction</option>
+                    <option value="beard">Bearded Lady</option> -->
                 </select>
             </div>
         </section>
@@ -86,7 +89,7 @@
             </div>
 
         </section>
-        <div>
+        <div class = "save-button">
             <input id="itinerary-name" type="text" placeholder="Name your adventure">
             <button type="button" id="itinerary__save">Save</button>
         </div>
