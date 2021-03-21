@@ -2,8 +2,8 @@ export const parkComponent = (object) => {
     return `
     <h3>Park</h3>
     <ul>
-        <li>Name: ${object.fullName}</li>
-        <li>Location: ${object.addresses[0].city}, ${object.addresses[0].stateCode}</li>
+        <li><b>Name:</b> ${object.fullName}</li>
+        <li><b>Location:</b> ${object.addresses[0].city}, ${object.addresses[0].stateCode}</li>
     </ul>
     <button id="park-details">Details</button>`
 }
@@ -12,7 +12,8 @@ export const parkDetailsComponent = (object) => {
     return `
     <h3>Park Details</h3>
     <ul>
-        <li>Description: ${object.description}</li>
+        <li><b>Description:</b> ${object.description}</li>
+        <li><b>Weather Info:</b> ${object.weatherInfo}</li>
     </ul>
     `
 }

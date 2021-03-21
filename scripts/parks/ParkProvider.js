@@ -29,7 +29,7 @@ const render = (parkList) => {
     
     parkTarget.innerHTML = `
     <select id="national-park__dropdown">
-                <option value="0">Select an Park</option>
+                <option value="0">Select a Park</option>
                 ${options}
             </select>`
 }

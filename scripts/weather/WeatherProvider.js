@@ -53,13 +53,13 @@ const ForecastCard = (weatherObj) => {
    
                 
                     <h3 class ="day">${convertTime(weatherObj.dt)}</h3>
-                
                     <h4 class ="temp">${weatherObj.temp.day}°</h4>
-                    <p class = "description">${weatherObj.weather[0].description}</p>
+                    <h5 class = "description">${weatherObj.weather[0].description}</h5>
+                    <hr>
                 
     `
 }
-// create and export function 
+// create and export function that will display weather data on the dom 
 export const weatherList = () => {
     let weatherHTML = "";
     getWeather().then(() => {
