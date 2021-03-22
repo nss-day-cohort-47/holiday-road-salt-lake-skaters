@@ -49,6 +49,7 @@ export const parkListener = () => {
             const parkValue = event.target.value
             console.log(parkValue)
             showPark(parkValue)
+            parkClear()
             saveEnabler()
         }
     })
