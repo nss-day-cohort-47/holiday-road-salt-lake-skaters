@@ -48,22 +48,23 @@ const convertTime = (date) => {
 
 
 const ForecastCard = (weatherObj) => {
-    console.log(weatherObj);
+    // console.log(weatherObj);
     return `
    
-                <ul>
-                        <li class ="day"><strong>${convertTime(weatherObj.dt)} </strong></li>
-                    <li class ="temp">${weatherObj.temp.day}°</li>
-                    <li class = "description">${weatherObj.weather[0].description}</li>
-                </ul>
+                
+                    <h3 class ="day">${convertTime(weatherObj.dt)}</h3>
+                    <h4 class ="temp">${weatherObj.temp.day}°</h4>
+                    <h5 class = "description">${weatherObj.weather[0].description}</h5>
+                    <hr>
+                
     `
 }
-// create and export function 
+// create and export function that will display weather data on the dom 
 export const weatherList = () => {
     let weatherHTML = "";
     getWeather().then(() => {
         const weatherArray = useWeatherCollection();
-        console.log(weatherArray);
+        // console.log(weatherArray);
         for (const day of weatherArray) {
             weatherHTML += ForecastCard(day)
 

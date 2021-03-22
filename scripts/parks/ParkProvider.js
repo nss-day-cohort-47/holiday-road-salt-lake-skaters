@@ -29,7 +29,7 @@ const render = (parkList) => {
     
     parkTarget.innerHTML = `
     <select id="national-park__dropdown">
-                <option value="0">Select an Park</option>
+                <option value="0">Select a Park</option>
                 ${options}
             </select>`
 }
@@ -51,6 +51,7 @@ export const parkListener = () => {
             showPark(parkValue)
             saveEnabler()
         }
+        
     })
 }
 export let lat = ""
@@ -76,6 +77,7 @@ const showPark = (park) => {
                 return onePark
             }
         })
+       
         const parkElement = document.querySelector(".itinerary-preview__park");
         parkElement.innerHTML = parkComponent(parkArray[0])
     }
@@ -85,6 +87,7 @@ const showPark = (park) => {
         saveEnabler()
 })
 }
+
 
 export const parkDetails = () => {
     document.addEventListener("click", event => {

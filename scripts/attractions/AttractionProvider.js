@@ -63,6 +63,7 @@ const showAttraction = (eat) => {
                     return oneAttraction
                 }
             })
+            
             const attractionElement = document.querySelector(".itinerary-preview__attractions");
             attractionElement.innerHTML = attractionComponent(attractionArray[0])
         })
@@ -70,6 +71,7 @@ const showAttraction = (eat) => {
             saveEnabler()
 })
     }
+    
 
 export const attractionDetails = () => {
     document.addEventListener("click", event => {
@@ -81,3 +83,4 @@ export const attractionDetails = () => {
     })
     
 }
+

@@ -2,6 +2,8 @@ import { currentEatery } from "./eateries/EateryProvider.js";
 import { currentPark } from "./parks/ParkProvider.js";
 import { currentAttraction } from "./attractions/AttractionProvider.js";
 
+// const itineraryName = document.getElementById("itinerary-name").placeholder
+
 
 export const apiObj = () => {
     const parkName = currentPark.fullName
@@ -19,9 +21,9 @@ export const apiObj = () => {
 export const itineraryHTML = (apiObject) => {
     return `
             <ul>
-                <li>National Park: ${apiObject.park}</li>
-                <li>Restaurant: ${apiObject.eatery}</li>
-                <li>Attraction: ${apiObject.attraction}</li>
+                <li><b>National Park:</b> ${apiObject.park}</li>
+                <li><b>Restaurant:</b> ${apiObject.eatery}</li>
+                <li><b>Attraction:</b> ${apiObject.attraction}</li>
             </ul> 
             <hr>`
 }

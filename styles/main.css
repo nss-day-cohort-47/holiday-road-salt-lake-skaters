@@ -1,9 +1,19 @@
+html{
+    font-family: 'Sawarabi Gothic', sans-serif;
+    
+}
+
+
 body{
-    background-color:#DBDFDD ;
+    background-color: #FFFFFF;
 }
 header {
     text-align: center;
     margin: 2em;
+    background-color:  #C8AD7F;
+    padding:1em;
+    color:white;
+    
 }
 header h1{
     font-size: 36pt;
@@ -16,36 +26,49 @@ main {
 
 footer {
     display: flex;
-    background-color:#213B2C;
+    background-color: #008080;
     color:whitesmoke;
+    height:50px;
+    justify-content:right;
+    margin-bottom: 0;
 }
+
 nav {
         display: flex;
+        background-color: #008080;
         height: 70px;
-        background-color:#213B2C;
+        
+        
         
 }
+.headline{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+    
+}
+
 .logo{
 
     justify-content: flex-start;
-    border: 4px solid ;
+    border: 2px solid ;
 }
 
 .banner-image{
-    background-image : url("images/park.jpg");
+background-image : url("images/park.jpg");
 height: 250px;
 background-position: center;
 background-size:cover;
 }
-.fiveDay {
-    text-align: center;
-}
+
 .section-center {
     display: flex;
-    /* border: 5px solid green; */
     justify-content: flex-start;
     flex-direction: column;
     flex-grow: 3;
+    padding: 1em;
+    margin: 1em;
 
 }
 
@@ -54,65 +77,87 @@ background-size:cover;
     border: 1px solid black;
     flex-direction: column;
     flex-grow: 1;
-    /* overflow: scroll; */
-    max-height: 450px;
-    background-color: #CCDDD3;
-
+    padding: 1em;
+    margin: 1em;
+    border-radius: .5em;
+    min-width: 100px;
+    background-color: #449798;
+    max-height: 950px;
 } 
 
-.forecast ul {
-    list-style-type:none;
-
-}
 
 .section-right {
     display: flex;
-    /* border: 5px solid purple; */
+    border: 1px solid black;
+    flex-direction: column;
     flex-grow: 1;
+    padding: 1em;
+    margin: 1em;
+    border-radius: .5em;
+    overflow: scroll;
+    min-width: 150px;
+    background-color: #449798;
+    max-height: 950px;
 }
 
 .dropdown-container {
     display: flex;
-    /* border: 5px solid aqua; */
-    justify-content: center;
+    justify-content: space-evenly;
+    margin: 1em;
+}
+
+#national-park__dropdown, #eateries__dropdown, #bizarre__dropdown{
+    background-color:  #C8AD7F;
+    color: white;
+    border: 1px solid black;
+    margin:1em;
 }
 
 .preview-container {
     display: flex;
-    /* border: 5px solid yellow; */
     justify-content: center;
-    height: 250px;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
+    height: 300px;
+    margin: 1em;
+    overflow-wrap: break-word;
+    
 }
 
 .details-container {
     padding-top: 5px;
     display: flex;
-    margin-top: 10px;
-    justify-content: center;
-    height: 500px;
-    /* border: 5px red solid; */
+    margin: 1em;
+    justify-content: flex-start;
+    min-height: 300px;
+    max-height: 600px;  
+    
 }
 
 #details-container__park, #details-container__eatery, #details-container__attraction {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* border: 5px green solid; */
-    width: 100px;
+    justify-content: flex-start;
+    border: 3px black solid;
+    border-radius: .5em;
+    margin: 5px;
+    padding: 2em;
+    overflow: scroll;
+    font-size:14px;
+    width: 33%;
 }
 
 .itinerary-preview {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .itinerary-preview__flex {
     display: flex;
     align-self: center;
     justify-content: space-between;
+    margin-bottom: 2em;
 
 }
 
@@ -121,6 +166,23 @@ background-size:cover;
     align-items: center;
     flex-direction: column;
     margin: 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 33%;
+    
 
 }
 
+#itinerary__save{
+    
+    background-color: #008080;
+    color:whitesmoke;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+}
+
+#itinerary__save:disabled{
+    background-color:  #C8AD7F;
+     
+}

@@ -2,6 +2,7 @@ import { saveEnabler } from "../SaveButtonComponent.js"
 import { eatComponent, eatDetailsComponent, eatClear } from "./EateryComponent.js"
 let allEateries = []
 
+
 const useEateries = () => [...allEateries]
 
 const getEateries = () => {
@@ -50,6 +51,7 @@ export const eateryListener = () => {
             
             
         }
+        
         })
 }
 
@@ -64,6 +66,7 @@ const showEatery = (eat) => {
                 return oneEatery
                     }
                 })
+               
         const eatElement = document.querySelector(".itinerary-preview__eat");
         eatElement.innerHTML = eatComponent(eateryArray[0])
             })
